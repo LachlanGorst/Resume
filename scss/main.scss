@@ -117,7 +117,7 @@ main {
 
   // todo: html button below
   .job-1 {
-    grid-area: job1; //? impact
+    grid-area: job1;
     height: 6rem;
     text-align: center;
     transform-style: preserve-3d;
@@ -141,7 +141,6 @@ main {
 
     .front {
       transform: rotateX(0deg) translateZ(15px);
-      //background-color: (lighten($primary-color, 5), 0.5);
       padding-top: -1rem;
       border-bottom: $secondary-color 5px solid;
       font-size: 3rem;
@@ -152,7 +151,6 @@ main {
     }
     .back {
       transform: rotateX(180deg) translateZ(100px);
-      //background-color: (lighten($primary-color, 5), 0.5);
       border-top: $secondary-color 5px solid;
       padding-left: 0.25rem;
       padding-top: 0.6rem;
@@ -175,7 +173,7 @@ main {
       cursor: pointer;
     }
     .center {
-      background-color: rgba($lighten-primary, 1);
+      background-color: rgba($lighten-primary, 0.5);
       padding: 0.5rem;
       border-bottom: $secondary-color 5px solid;
     }
@@ -187,7 +185,6 @@ main {
       left: 0;
       width: 100%;
       height: 100%;
-      //background: lighten($primary-color, 5);
       transform: translateZ(-1px);
     }
     &:hover .center {
@@ -201,6 +198,56 @@ main {
 
   .job-3 {
     grid-area: job3;
+
+    .spot {
+      position: fixed;
+      top: 452px;
+      left: 698px;
+      visibility: hidden;
+      height: 20px;
+      width: 20px;
+      background: blue;
+      border-radius: 50%;
+    }
+  }
+
+  .job-4 {
+    color: set-text-color($primary-color);
+  }
+
+  .job-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lighten($primary-color, 5);
+    border-bottom: $secondary-color 5px solid;
+    &:hover {
+      cursor: pointer;
+    }
+    .inputName {
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      text-align: center;
+      margin-top: -10px;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      visibility: hidden;
+
+      #userName {
+        background: none;
+        border: none;
+        border-bottom: rgb(139, 212, 255) 3px solid;
+        color: rgb(139, 212, 255);
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+    h1 {
+      font-size: 3rem;
+      visibility: visible;
+      text-align: center;
+    }
   }
 
   .job {
