@@ -166,7 +166,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -178,16 +178,83 @@ main {
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
+    .about-info .bio .subtle {
+      font-size: 1rem;
+      color: #0080ff; }
   .about-info .job-1 {
-    grid-area: job1; }
+    grid-area: job1;
+    height: 6rem;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform-origin: center center; }
+    .about-info .job-1 .plane-side {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-align: center;
+      line-height: 2;
+      background-color: rgba(81, 81, 81, 0.25);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition: 1s; }
+    .about-info .job-1 .front {
+      transform: rotateX(0deg) translateZ(15px);
+      padding-top: -1rem;
+      border-bottom: #0080ff 5px solid;
+      font-size: 3rem; }
+    .about-info .job-1:hover .front {
+      transform: rotateX(-180deg) translateZ(100px);
+      cursor: pointer; }
+    .about-info .job-1 .back {
+      transform: rotateX(180deg) translateZ(100px);
+      border-top: #0080ff 5px solid;
+      padding-left: 0.25rem;
+      padding-top: 0.6rem;
+      line-height: 1.5rem;
+      text-align: start; }
+      .about-info .job-1 .back code.htmlCode {
+        font-size: 1.5rem; }
+        .about-info .job-1 .back code.htmlCode .div {
+          color: #1fe41f; }
+        .about-info .job-1 .back code.htmlCode .classSpan {
+          color: red; }
+    .about-info .job-1:hover .back {
+      transform: rotateX(0deg) translateZ(20px);
+      cursor: pointer; }
+    .about-info .job-1 .center {
+      background-color: #515151;
+      padding: 0.5rem;
+      border-bottom: #0080ff 5px solid; }
+    .about-info .job-1 .center:before {
+      background-color: rgba(81, 81, 81, 0.5);
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(-1px); }
+    .about-info .job-1:hover .center {
+      transform: rotateX(-180deg); }
   .about-info .job-2 {
     grid-area: job2; }
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #515151;
     padding: 0.5rem;
     border-bottom: #0080ff 5px solid; }
+    .about-info .job:hover {
+      cursor: pointer; }
+    .about-info .job h1 {
+      font-size: 3rem; }
 
 .projects {
   display: grid;
@@ -285,7 +352,7 @@ main {
       width: 150px;
       height: 150px; }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }

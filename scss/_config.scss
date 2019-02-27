@@ -3,6 +3,7 @@ $secondary-color: #0080ff;
 $show-home-image: true;
 $home-image: url(../img/background.jpeg);
 $background-opacity: 0.9;
+$lighten-primary: lighten($primary-color, 5);
 
 // basically a function
 @mixin easeOut {
