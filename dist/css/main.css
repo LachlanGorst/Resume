@@ -1,3 +1,15 @@
+@keyframes animate {
+  0% {
+    background-position: 0%; }
+  100% {
+    background-position: 400%; } }
+
+@keyframes spotBubble {
+  0% {
+    box-shadow: 0 0 10px #0080ff; }
+  100% {
+    box-shadow: 0 0 10px #0080ff, 0 0 20px white, 0 0 30px white, 0 0 0 125px #0080ff, 0 0 0 45px #0080ff; } }
+
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -241,7 +253,35 @@ main {
     .about-info .job-1:hover .center {
       transform: rotateX(-180deg); }
   .about-info .job-2 {
-    grid-area: job2; }
+    grid-area: job2;
+    opacity: 100%; }
+    .about-info .job-2.hidden {
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom: none; }
+    .about-info .job-2 .blurBack {
+      width: 25%;
+      height: 10%;
+      position: absolute;
+      background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+      background-size: 400%;
+      border-radius: 50px;
+      transition: 2s;
+      animation: animate 8s linear infinite;
+      opacity: 100%;
+      filter: blur(20px); }
+      .about-info .job-2 .blurBack.hidden {
+        opacity: 0; }
+    .about-info .job-2 .css {
+      z-index: 1;
+      width: 90%;
+      text-align: center; }
+      .about-info .job-2 .css.glow {
+        background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+        background-size: 400%;
+        border-radius: 50px;
+        border-bottom: none;
+        transition: 2s;
+        animation: animate 8s linear infinite; }
   .about-info .job-3 {
     grid-area: job3; }
     .about-info .job-3 .spot {
@@ -251,10 +291,17 @@ main {
       visibility: hidden;
       height: 20px;
       width: 20px;
-      background: blue;
-      border-radius: 50%; }
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2); }
+      .about-info .job-3 .spot.spotClicked {
+        visibility: visible;
+        animation: spotBubble 2s linear; }
   .about-info .job-4 {
     color: #fff; }
+    .about-info .job-4.blue {
+      background: #0080ff;
+      border-bottom: #000 5px solid;
+      color: #000; }
   .about-info .job-5 {
     display: flex;
     justify-content: center;

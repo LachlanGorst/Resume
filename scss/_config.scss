@@ -5,6 +5,26 @@ $home-image: url(../img/background.jpeg);
 $background-opacity: 0.9;
 $lighten-primary: lighten($primary-color, 5);
 
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+@keyframes spotBubble {
+  0% {
+    box-shadow: 0 0 10px rgba($color: #0080ff, $alpha: 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(#0080ff, 1), 0 0 20px rgba(#fff, 1),
+      0 0 30px rgba(#fff, 1), 0 0 0 125px rgba(#0080ff, 1),
+      0 0 0 45px rgba(#0080ff, 1);
+  }
+}
+
 // basically a function
 @mixin easeOut {
   transition: all 0.5s ease-out;
